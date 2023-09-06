@@ -176,15 +176,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2023-06-30T19:07:57+08:00"
+              datetime="2023-06-30T18:31:32+08:00"
               content="2023-06-30">
           06-30
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2023/06/30/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
+          <a class="post-title-link" href="/2023/06/30/3W-Quest/" itemprop="url">
+            <span itemprop="name">3W Quest</span>
           </a>
       </div>
 
@@ -196,15 +196,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2023-06-30T18:31:32+08:00"
-              content="2023-06-30">
-          06-30
+              datetime="2023-06-14T00:00:00+08:00"
+              content="2023-06-14">
+          06-14
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2023/06/30/3W-Quest/" itemprop="url">
-            <span itemprop="name">3W Quest</span>
+          <a class="post-title-link" href="/2023/06/14/hello-world/" itemprop="url">
+            <span itemprop="name">Hello World</span>
           </a>
       </div>
 
@@ -282,16 +282,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -319,6 +319,13 @@
         
 
         
+  <script src='https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
 
 <div class="copyright">
   
@@ -377,6 +384,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   
@@ -405,10 +425,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       meta       : guest,
       pageSize   : '10' || 10,
       visitor    : false,
-      lang       : '' || 'zh-cn',
+      lang       : 'en' || 'zh-cn',
       path       : location.pathname,
       recordIP   : false,
-      serverURLs : ''
+      serverURLs : 'https://yb1qgroe.api.lncldglobal.com'
     });
   }, window.Valine);
 });

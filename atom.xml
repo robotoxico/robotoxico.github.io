@@ -6,7 +6,7 @@
   <link href="https://robotoxico.github.io/atom.xml" rel="self"/>
   
   <link href="https://robotoxico.github.io/"/>
-  <updated>2023-09-05T13:52:38.559Z</updated>
+  <updated>2023-09-06T15:25:30.516Z</updated>
   <id>https://robotoxico.github.io/</id>
   
   <author>
@@ -17,19 +17,21 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Remote Procedure Call</title>
-    <link href="https://robotoxico.github.io/2023/09/05/Remote-Procedure-Call/"/>
-    <id>https://robotoxico.github.io/2023/09/05/Remote-Procedure-Call/</id>
-    <published>2023-09-05T13:39:14.000Z</published>
-    <updated>2023-09-05T13:52:38.559Z</updated>
+    <title>Mermaid.js</title>
+    <link href="https://robotoxico.github.io/2023/09/06/Mermaid-js/"/>
+    <id>https://robotoxico.github.io/2023/09/06/Mermaid-js/</id>
+    <published>2023-09-06T14:27:47.000Z</published>
+    <updated>2023-09-06T15:25:30.516Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="rpc-api-from-win32">RPC API from win32</h2><p>rpcdce.h <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">RPC_STATUS <span class="title">RpcServerUseProtseqEp</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  RPC_CSTR     Protseq,</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">unsigned</span> <span class="type">int</span> MaxCalls,</span></span></span><br><span class="line"><span class="params"><span class="function">  RPC_CSTR     Endpoint,</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">void</span>         *SecurityDescriptor</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br></pre></td></tr></table></figure></p><p><ahref="https://learn.microsoft.com/en-us/windows/win32/api/rpcdce/nf-rpcdce-rpcserveruseprotseqep">APIDocument Reference</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="installation">installation</h2><p><a href="https://mermaid.js.org/config/usage.html">Moredetails</a></p><h3 id="the-npm-package">the npm package</h3><p>Requirements: Node &gt;= 16</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># NPM</span></span><br><span class="line">npm install mermaid</span><br><span class="line"></span><br><span class="line"><span class="comment"># Yarn</span></span><br><span class="line">yarn add mermaid</span><br><span class="line"></span><br><span class="line"><span class="comment"># PNPM</span></span><br><span class="line">pnpm add mermaid</span><br></pre></td></tr></table></figure><h3 id="integrate-on-a-web-page">integrate on a web page</h3><ol type="1"><li><p>a graph definition</p><p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span> <span class="attr">class</span>=<span class="string">&#x27;mermaid&#x27;</span>&gt;</span></span><br><span class="line">  graph LR</span><br><span class="line">  A --- B</span><br><span class="line">  B --&gt; C[fa:fa-ban forbidden]</span><br><span class="line">  B --&gt; D(fa:fa-spinner);</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li><li><p>the mermaid.js script</p><p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> mermaid <span class="keyword">from</span> <span class="string">&#x27;https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li></ol><p>This is not work for current hexo page:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  import mermaid from &#x27;</span><span class="template-variable">&#123;&#123; <span class="name">theme.mermaid.mjscdn</span> &#125;&#125;</span><span class="language-xml">&#x27;;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">  mermaid.initialize(&#123; startOnLoad: </span><span class="template-variable">&#123;&#123; <span class="name">theme.mermaid.options.startOnload</span> &#125;&#125;</span><span class="language-xml"> &#125;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p>It works:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;&#123;&#123;theme.mermaid.cdn&#125;&#125;&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">if</span> (<span class="variable language_">window</span>.<span class="property">mermaid</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    mermaid.<span class="title function_">initialize</span>(&#123;<span class="attr">theme</span>: <span class="string">&#x27;forest&#x27;</span>&#125;);</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="diagram-syntax">Diagram Syntax</h2><h3 id="flowchart">Flowchart</h3><pre class="mermaid">---title: Node with text---flowchart LR    id1[This is the text in the box]</pre><pre class="mermaid">%%{init: {"flowchart": {"htmlLabels": false}} }%%flowchart LR    markdown["`This **is** _Markdown_`"]    newLines["`Line1    Line 2    Line 3`"]    markdown --> newLines</pre><pre class="mermaid">flowchart LR    id1([This is the text in the box])</pre><h4 id="text-on-links">text on links</h4><pre class="mermaid">flowchart LR  A-- text! ---B</pre><pre class="mermaid">flowchart LR  A---|text!|B</pre>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;rpc-api-from-win32&quot;&gt;RPC API from win32&lt;/h2&gt;
-&lt;p&gt;rpcdce.h &lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span clas</summary>
+    <summary type="html">&lt;h2 id=&quot;installation&quot;&gt;installation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://mermaid.js.org/config/usage.html&quot;&gt;More
+details&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-npm-packag</summary>
       
     
     
@@ -38,13 +40,90 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://robotoxico.github.io/2023/06/30/hello-world/"/>
-    <id>https://robotoxico.github.io/2023/06/30/hello-world/</id>
-    <published>2023-06-30T11:07:57.401Z</published>
-    <updated>2023-06-30T11:07:57.401Z</updated>
+    <title>Dynamic Programming</title>
+    <link href="https://robotoxico.github.io/2023/09/06/Dynamic-Programming/"/>
+    <id>https://robotoxico.github.io/2023/09/06/Dynamic-Programming/</id>
+    <published>2023-09-06T08:17:26.000Z</published>
+    <updated>2023-09-06T14:27:20.353Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your veryfirst post. Check <a href="https://hexo.io/docs/">documentation</a> formore info. If you get any problems when using Hexo, you can find theanswer in <ahref="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> oryou can ask me on <ahref="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start">Quick Start</h2><h3 id="create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>General Framework:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>][...] = &lt;bound&gt;</span><br><span class="line"><span class="keyword">for</span> (status~<span class="number">1</span> : valueset~<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (status~<span class="number">2</span> : valueset~<span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (...) &#123;</span><br><span class="line">      <span class="comment">// state transformer</span></span><br><span class="line">      dp[status~<span class="number">1</span>][status~<span class="number">2</span>][...] = (min-max)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="example">Example</h2><ol type="1"><li><a href="https://leetcode.com/problems/regular-expression-matching/description/">RegularExpression Matching</a></li></ol><pre class="mermaid">flowchart LRA[Hard] -->|Text| B(Round)B --> C{Decision}C -->|One| D[Result 1]C -->|Two| E[Result 2]</pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;General Framework:&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line</summary>
+      
+    
+    
+    
+    <category term="Datastructures &amp; Algorithms" scheme="https://robotoxico.github.io/categories/Datastructures-Algorithms/"/>
+    
+    <category term="DP" scheme="https://robotoxico.github.io/categories/Datastructures-Algorithms/DP/"/>
+    
+    
+    <category term="DP" scheme="https://robotoxico.github.io/tags/DP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Remote Procedure Call</title>
+    <link href="https://robotoxico.github.io/2023/09/05/Remote-Procedure-Call/"/>
+    <id>https://robotoxico.github.io/2023/09/05/Remote-Procedure-Call/</id>
+    <published>2023-09-05T13:39:14.000Z</published>
+    <updated>2023-09-06T06:07:09.836Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="rpc-api-from-win32">RPC API from win32</h2><p>rpcdce.h</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">RPC_STATUS <span class="title">RpcServerUseProtseqEp</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  RPC_CSTR     Protseq,</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">unsigned</span> <span class="type">int</span> MaxCalls,</span></span></span><br><span class="line"><span class="params"><span class="function">  RPC_CSTR     Endpoint,</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">void</span>         *SecurityDescriptor</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br></pre></td></tr></table></figure><p><a href="https://learn.microsoft.com/en-us/windows/win32/api/rpcdce/nf-rpcdce-rpcserveruseprotseqep">APIDocument Reference</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;rpc-api-from-win32&quot;&gt;RPC API from win32&lt;/h2&gt;
+&lt;p&gt;rpcdce.h&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>3W Quest</title>
+    <link href="https://robotoxico.github.io/2023/06/30/3W-Quest/"/>
+    <id>https://robotoxico.github.io/2023/06/30/3W-Quest/</id>
+    <published>2023-06-30T10:31:32.000Z</published>
+    <updated>2023-09-06T09:08:14.036Z</updated>
+    
+    <content type="html"><![CDATA[<figure><img src="/.io//wwwquest.png" title="Who am I? Where do I come from? Where should I go?" alt="alternative"><figcaption aria-hidden="true">alternative</figcaption></figure><h2 id="pictures-reference">Pictures Reference</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hexo:</span><br><span class="line">&#123;% asset_img img-uri prompts %&#125;</span><br></pre></td></tr></table></figure><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Markdown:</span><br><span class="line">![<span class="string">alternative</span>](<span class="link">img-uri prompts</span>)</span><br></pre></td></tr></table></figure><h2 id="tags-categories">Tags &amp; Categories</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - tag1</span><br><span class="line">  - tag2</span><br><span class="line"></span><br><span class="line">tags: [tag1, tag2]</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">categories: cat1</span><br><span class="line"></span><br><span class="line">categories: [cat1, subcat1]</span><br><span class="line"></span><br><span class="line">categories:</span><br><span class="line">  - cat1</span><br><span class="line">  - subcat1</span><br><span class="line"></span><br><span class="line">categories:</span><br><span class="line">  - [cat1]</span><br><span class="line">  - [cat2]</span><br><span class="line">  - [cat3, subcat3]</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure&gt;
+&lt;img src=&quot;/.io//wwwquest.png&quot; title=&quot;Who am I? Where do I come from? Where should I go?&quot; alt=&quot;alternative&quot;&gt;
+&lt;figcaption aria-hidd</summary>
+      
+    
+    
+    
+    <category term="Tutorials" scheme="https://robotoxico.github.io/categories/Tutorials/"/>
+    
+    <category term="Hexo" scheme="https://robotoxico.github.io/categories/Tutorials/Hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://robotoxico.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://robotoxico.github.io/2023/06/14/hello-world/"/>
+    <id>https://robotoxico.github.io/2023/06/14/hello-world/</id>
+    <published>2023-06-13T16:00:00.000Z</published>
+    <updated>2023-09-06T08:43:58.021Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your veryfirst post. Check <a href="https://hexo.io/docs/">documentation</a> formore info. If you get any problems when using Hexo, you can find theanswer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> oryou can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start">Quick Start</h2><h3 id="create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
       
@@ -54,35 +133,6 @@ first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&
       
     
     
-    
-    
-    <category term="hexo" scheme="https://robotoxico.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>3W Quest</title>
-    <link href="https://robotoxico.github.io/2023/06/30/3W-Quest/"/>
-    <id>https://robotoxico.github.io/2023/06/30/3W-Quest/</id>
-    <published>2023-06-30T10:31:32.000Z</published>
-    <updated>2023-06-30T11:07:57.385Z</updated>
-    
-    <content type="html"><![CDATA[<figure><img src="wwwquest.png"title="Who am I? Where do I come from? Where should I go?"alt="Who am I? Where do I come from? Where should I go?" /><figcaption aria-hidden="true">Who am I? Where do I come from? Whereshould I go?</figcaption></figure><h2 id="pictures-reference">Pictures Reference</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hexo:</span><br><span class="line">&#123;% asset_img img-uri prompts %&#125;</span><br></pre></td></tr></table></figure><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Markdown:</span><br><span class="line">![<span class="string">title</span>](<span class="link">img-uri prompts</span>)</span><br></pre></td></tr></table></figure><h2 id="tags-categories">Tags &amp; Categories</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - tag1</span><br><span class="line">  - tag2</span><br><span class="line"></span><br><span class="line">tags: [tag1, tag2]</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">categories: cat1</span><br><span class="line"></span><br><span class="line">categories: [cat1, subcat1]</span><br><span class="line"></span><br><span class="line">categories:</span><br><span class="line">  - cat1</span><br><span class="line">  - subcat1</span><br><span class="line"></span><br><span class="line">categories:</span><br><span class="line">  - [cat1]</span><br><span class="line">  - [cat2]</span><br><span class="line">  - [cat3, subcat3]</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;figure&gt;
-&lt;img src=&quot;wwwquest.png&quot;
-title=&quot;Who am I? Where do I come from? Where should I go?&quot;
-alt=&quot;Who am I? Where do I come from? Where sh</summary>
-      
-    
-    
-    
-    <category term="Tutorials" scheme="https://robotoxico.github.io/categories/Tutorials/"/>
-    
-    <category term="Hexo" scheme="https://robotoxico.github.io/categories/Tutorials/Hexo/"/>
     
     
     <category term="hexo" scheme="https://robotoxico.github.io/tags/hexo/"/>
